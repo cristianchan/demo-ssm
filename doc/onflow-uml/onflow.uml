@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_lT6mEH-xEeiLNKFKl5FhqA" name="onflow">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_lhyC8H-xEeiLNKFKl5FhqA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_lWTywH-xEeiLNKFKl5FhqA" name="Flujo1">
+    <region xmi:type="uml:Region" xmi:id="_lXCykH-xEeiLNKFKl5FhqA" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_NLoTQH-4Eeiar5LZk7-8bw" name="dni_ok" source="_2pUysH-xEeiLNKFKl5FhqA" target="_AGa_QH-yEeiLNKFKl5FhqA"/>
+      <transition xmi:type="uml:Transition" xmi:id="_0lUPYH-4Eeiar5LZk7-8bw" source="_wP9ncH-yEeiLNKFKl5FhqA" target="_x6oKwH-4Eeiar5LZk7-8bw">
+        <trigger xmi:type="uml:Trigger" xmi:id="_AAT1QIEoEei8QZfzIQUF3w" event="__wl-QIEnEei8QZfzIQUF3w"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_1tqgwIEnEei8QZfzIQUF3w" source="_AGa_QH-yEeiLNKFKl5FhqA" target="_wP9ncH-yEeiLNKFKl5FhqA">
+        <trigger xmi:type="uml:Trigger" xmi:id="_4B-swIEnEei8QZfzIQUF3w" name="" event="__wl-QIEnEei8QZfzIQUF3w"/>
+      </transition>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_2pUysH-xEeiLNKFKl5FhqA" name="INGRESO DNI"/>
+      <subvertex xmi:type="uml:State" xmi:id="_AGa_QH-yEeiLNKFKl5FhqA" name="ingreso_datos_personales">
+        <doActivity xmi:type="uml:OpaqueBehavior" xmi:id="_0f6hIIFcEei8QZfzIQUF3w" name="llamarADniService" visibility="package">
+          <language>spel</language>
+          <body></body>
+        </doActivity>
+      </subvertex>
+      <subvertex xmi:type="uml:State" xmi:id="_wP9ncH-yEeiLNKFKl5FhqA" name="ver_clasificacion"/>
+      <subvertex xmi:type="uml:FinalState" xmi:id="_x6oKwH-4Eeiar5LZk7-8bw" name="fin_consulta"/>
+    </region>
+  </packagedElement>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="__wl-QIEnEei8QZfzIQUF3w" name="SignalEvent2" signal="__ljy8IEnEei8QZfzIQUF3w"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="__ljy8IEnEei8QZfzIQUF3w" name="Evento2"/>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_9K63cH-xEeiLNKFKl5FhqA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9K8FkH-xEeiLNKFKl5FhqA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>
