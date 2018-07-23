@@ -4,27 +4,28 @@
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
   <packagedElement xmi:type="uml:StateMachine" xmi:id="_lWTywH-xEeiLNKFKl5FhqA" name="Flujo1">
+    <ownedBehavior xmi:type="uml:FunctionBehavior" xmi:id="_4E0AsIFbEei8QZfzIQUF3w" name="LlamarAlService"/>
     <region xmi:type="uml:Region" xmi:id="_lXCykH-xEeiLNKFKl5FhqA" name="Region1">
       <transition xmi:type="uml:Transition" xmi:id="_NLoTQH-4Eeiar5LZk7-8bw" name="dni_ok" source="_2pUysH-xEeiLNKFKl5FhqA" target="_AGa_QH-yEeiLNKFKl5FhqA"/>
-      <transition xmi:type="uml:Transition" xmi:id="_0lUPYH-4Eeiar5LZk7-8bw" source="_wP9ncH-yEeiLNKFKl5FhqA" target="_x6oKwH-4Eeiar5LZk7-8bw">
-        <trigger xmi:type="uml:Trigger" xmi:id="_AAT1QIEoEei8QZfzIQUF3w" event="__wl-QIEnEei8QZfzIQUF3w"/>
+      <transition xmi:type="uml:Transition" xmi:id="_0lUPYH-4Eeiar5LZk7-8bw" name="Transition2" source="_wP9ncH-yEeiLNKFKl5FhqA" target="_x6oKwH-4Eeiar5LZk7-8bw">
+        <trigger xmi:type="uml:Trigger" xmi:id="_AAT1QIEoEei8QZfzIQUF3w" name="Trigger2" event="_dBzf8I6ZEeiDLqUPa9UjIA"/>
       </transition>
-      <transition xmi:type="uml:Transition" xmi:id="_1tqgwIEnEei8QZfzIQUF3w" source="_AGa_QH-yEeiLNKFKl5FhqA" target="_wP9ncH-yEeiLNKFKl5FhqA">
-        <trigger xmi:type="uml:Trigger" xmi:id="_4B-swIEnEei8QZfzIQUF3w" name="" event="__wl-QIEnEei8QZfzIQUF3w"/>
+      <transition xmi:type="uml:Transition" xmi:id="_1tqgwIEnEei8QZfzIQUF3w" name="Transition1" source="_AGa_QH-yEeiLNKFKl5FhqA" target="_wP9ncH-yEeiLNKFKl5FhqA">
+        <trigger xmi:type="uml:Trigger" xmi:id="_kT08EI6ZEeiDLqUPa9UjIA" name="Trigger1" event="_dBzf8I6ZEeiDLqUPa9UjIA"/>
       </transition>
       <subvertex xmi:type="uml:Pseudostate" xmi:id="_2pUysH-xEeiLNKFKl5FhqA" name="INGRESO DNI"/>
       <subvertex xmi:type="uml:State" xmi:id="_AGa_QH-yEeiLNKFKl5FhqA" name="ingreso_datos_personales">
-        <doActivity xmi:type="uml:OpaqueBehavior" xmi:id="_0f6hIIFcEei8QZfzIQUF3w" name="llamarADniService" visibility="package">
+        <doActivity xmi:type="uml:OpaqueBehavior" xmi:id="_0f6hIIFcEei8QZfzIQUF3w" name="llamarADniService" visibility="public" isActive="true">
           <language>spel</language>
-          <body></body>
+          <body>dniService.invocar()</body>
         </doActivity>
       </subvertex>
       <subvertex xmi:type="uml:State" xmi:id="_wP9ncH-yEeiLNKFKl5FhqA" name="ver_clasificacion"/>
       <subvertex xmi:type="uml:FinalState" xmi:id="_x6oKwH-4Eeiar5LZk7-8bw" name="fin_consulta"/>
     </region>
   </packagedElement>
-  <packagedElement xmi:type="uml:SignalEvent" xmi:id="__wl-QIEnEei8QZfzIQUF3w" name="SignalEvent2" signal="__ljy8IEnEei8QZfzIQUF3w"/>
   <packagedElement xmi:type="uml:Signal" xmi:id="__ljy8IEnEei8QZfzIQUF3w" name="Evento2"/>
+  <packagedElement xmi:type="uml:SignalEvent" xmi:id="_dBzf8I6ZEeiDLqUPa9UjIA" name="SignalEvento2" signal="__ljy8IEnEei8QZfzIQUF3w"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_9K63cH-xEeiLNKFKl5FhqA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9K8FkH-xEeiLNKFKl5FhqA" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
