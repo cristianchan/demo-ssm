@@ -30,6 +30,7 @@ import org.springframework.statemachine.data.jpa.JpaStateMachineRepository;
 import org.springframework.statemachine.persist.StateMachineRuntimePersister;
 import org.springframework.statemachine.service.DefaultStateMachineService;
 import org.springframework.statemachine.service.StateMachineService;
+import org.springframework.statemachine.uml.UmlStateMachineModelFactory;
 
 @Configuration
 public class StateMachineConfig {
@@ -63,7 +64,7 @@ public class StateMachineConfig {
 
         @Bean
         public StateMachineModelFactory<String, String> modelFactory() {
-            return new UnverifiedUmlStateMachineModelFactory(new ClassPathResource("doc/onflow-uml/onflow.uml"));
+            return new UmlStateMachineModelFactory(new ClassPathResource("doc/onflow-uml/onflow.uml"));
         }
 
         @Bean

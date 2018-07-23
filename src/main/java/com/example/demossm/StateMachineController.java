@@ -1,12 +1,14 @@
 package com.example.demossm;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.statemachine.StateMachine;
 import org.springframework.statemachine.StateMachineContext;
 import org.springframework.statemachine.StateMachinePersist;
+import org.springframework.statemachine.config.model.StateMachineModelFactory;
 import org.springframework.statemachine.service.StateMachineService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,15 +23,15 @@ public class StateMachineController {
     public final static String MACHINE_ID_1 = "datajpapersist1";
     public final static String MACHINE_ID_2 = "datajpapersist2";
     private final static String[] MACHINES = new String[]{MACHINE_ID_1, MACHINE_ID_2};
-
     private final StateMachineLogListener listener = new StateMachineLogListener();
     private StateMachine<String, String> currentStateMachine;
 
     @Autowired
     private StateMachineService<String, String> stateMachineService;
-
     @Autowired
     private StateMachinePersist<String, String, String> stateMachinePersist;
+    @Autowired
+    StateMachineModelFactory<String, String> stateMachineModelFactory;
 
     @RequestMapping("/")
     public String home() {
@@ -72,9 +74,9 @@ public class StateMachineController {
         return currentStateMachine;
     }
 
-    private String[] getEvents() {
-        String[] array = {"Evento2"};
-        return array;
+    private List<String> getEvents() {
+        return stateMachineModelFactory.build().getTransitionsData().getTransitions().stream()
+                .map(transitionData -> transitionData.getEvent()).collect(Collectors.toList());
     }
 
     private String createMessages(List<String> messages) {
